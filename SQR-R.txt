@@ -1,0 +1,7 @@
+install.packages("RODBC")
+library("RODBC")
+#library("XLConnect")
+
+dbhandle <- odbcDriverConnect('driver={SQL Server};server=Name_Of_Server;database=Name_Of_DB;trusted_connection=true')
+currTableSQL<-paste("SELECT * From Your_Table",sep="")
+currTableDF<-sqlQuery(dbhandle,currTableSQL)
