@@ -1,3 +1,4 @@
+# convert number to date formate
 1.
 from datetime import datetime
 >>> dt = datetime.fromordinal(733828)
@@ -15,4 +16,64 @@ dt.date.fromtimestamp(733828.0).strftime('%Y%m%d')
 
 
 
+# dofference bteween two dates
+1.
+from datetime import datetime
+
+def days_between(d1, d2):
+    d1 = datetime.strptime(d1, "%Y-%m-%d")
+    d2 = datetime.strptime(d2, "%Y-%m-%d")
+    return abs((d2 - d1).days)
+
+
+2.
+import datetime
+
+end_date = datetime.datetime.utcnow()
+start_date = end_date - datetime.timedelta(days=8)
+difference_in_days = abs((end_date - start_date).days)
+
+print difference_in_days
+
+3.
+
+from datetime import date
+
+d0 = date(2008, 8, 18)
+d1 = date(2008, 9, 26)
+delta = d1 - d0
+print delta.days
+
+4.
+from datetime import datetime
+date_format = "%m/%d/%Y"
+a = datetime.strptime('8/18/2008', date_format)
+b = datetime.strptime('9/26/2008', date_format)
+delta = b - a
+print delta.days # that's it
+
+
+
+# find the today date
+1.
+from datetime import datetime
+
+datetime.today().strftime('%Y-%m-%d')
+
+2.
+
+from datetime import date
+today = str(date.today())
+print(today)   # '2017-12-26'
+
+3.
+
+from datetime import date    
+today = date.today().isoformat()
+print(today) # '2018-12-05'
+Note that this also works on datetime objects if you need the time in standard format as well.
+
+from datetime import datetime
+now = datetime.today().isoformat()
+print(now) # '2018-12-05T11:15:55.126382'
                              	
