@@ -1,0 +1,18 @@
+1.
+from datetime import datetime
+>>> dt = datetime.fromordinal(733828)
+>>> dt
+datetime.datetime(2010, 2, 25, 0, 0)
+>>> dt.strftime('%Y%m%d')
+'20100225'
+
+
+
+2.
+
+import datetime as dt
+dt.date.fromtimestamp(733828.0).strftime('%Y%m%d')
+
+
+
+                             	
